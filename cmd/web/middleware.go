@@ -24,3 +24,8 @@ func NoSurf(next http.Handler) http.Handler {
 
 	return csrfHandler
 }
+
+// FileServerUtil is static file server middleware..
+func FileServerUtil(dir string) http.Handler {
+	return http.FileServer(http.Dir(dir))
+}
